@@ -27,6 +27,7 @@ namespace Graphs
             };
 
             DFS("neufahrn");
+
             Console.ReadKey();
         }
 
