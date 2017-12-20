@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5586AF3B-32BA-4C58-A192-45F5E6A952C0}</ProjectGuid>
+    <ProjectGuid>{3DBAB9F6-05D3-4CAF-892F-1CA76AC75CC9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Graphs</RootNamespace>
-    <AssemblyName>Graphs</AssemblyName>
+    <RootNamespace>DFSRecursive</RootNamespace>
+    <AssemblyName>DFSRecursive</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

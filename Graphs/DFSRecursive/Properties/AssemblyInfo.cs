@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Graphs")]
+[assembly: AssemblyTitle("DFSRecursive")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("Graphs")]
+[assembly: AssemblyProduct("DFSRecursive")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5586af3b-32ba-4c58-a192-45f5e6a952c0")]
+[assembly: Guid("3dbab9f6-05d3-4caf-892f-1ca76ac75cc9")]
 
 // Version information for an assembly consists of the following four values:
 //

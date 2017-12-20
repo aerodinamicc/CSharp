@@ -27,7 +27,6 @@ namespace Graphs
             };
 
             DFS("neufahrn");
-
             Console.ReadKey();
         }
 
@@ -37,7 +36,7 @@ namespace Graphs
             nodes.Push(node);
             visited.Add(node);
 
-            while(nodes.Count != 0)
+            while (nodes.Count != 0)
             {
                 string currentNode = nodes.Pop();
                 Console.WriteLine(currentNode);
@@ -54,5 +53,5 @@ namespace Graphs
         }
     }
 
-    
+
 }
