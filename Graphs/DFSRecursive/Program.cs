@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DFSRecursive
 {
-    class Program
+    public class Program
     {
         private static readonly List<List<int>> graph = new List<List<int>>()
         {

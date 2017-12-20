@@ -11,7 +11,7 @@ namespace Graphs
         private static Dictionary<string, List<string>> graph;
         private static HashSet<string> visited = new HashSet<string>();
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             graph = new Dictionary<string, List<string>>
             {
