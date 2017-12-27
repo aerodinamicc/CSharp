@@ -26,12 +26,14 @@ namespace DijkstraWithoutPriorityQueue
             while(setOfNodes.Count != 0)
             {
                 int minNode = int.MaxValue;
+                int minValue = int.MaxValue;
 
                 foreach (var node in setOfNodes)
                 {
-                    if (distance[node] < minNode)
+                    if (distance[node] < minValue)
                     {
                         minNode = node;
+                        minValue = distance[node];
                     }
                 }
 
