@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphConnectivityWithDfs", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopoSearch-MinTimeProblem", "TopoSearch-MinTimeProblem\TopoSearch-MinTimeProblem.csproj", "{CC36F5CC-3594-4990-96A0-0B72E4457DB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraWithoutPriorityQueue", "DijkstraWithoutPriorityQueue\DijkstraWithoutPriorityQueue.csproj", "{140C42EF-FB88-4CAE-90E2-1B7F13B28E6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CC36F5CC-3594-4990-96A0-0B72E4457DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC36F5CC-3594-4990-96A0-0B72E4457DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC36F5CC-3594-4990-96A0-0B72E4457DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{140C42EF-FB88-4CAE-90E2-1B7F13B28E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{140C42EF-FB88-4CAE-90E2-1B7F13B28E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{140C42EF-FB88-4CAE-90E2-1B7F13B28E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{140C42EF-FB88-4CAE-90E2-1B7F13B28E6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
