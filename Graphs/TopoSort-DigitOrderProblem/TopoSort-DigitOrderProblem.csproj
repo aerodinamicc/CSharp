@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC36F5CC-3594-4990-96A0-0B72E4457DB7}</ProjectGuid>
+    <ProjectGuid>{992360FC-B9B4-4107-BAD2-487258ADDEE2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TopoSearch_MinTimeProblem</RootNamespace>
-    <AssemblyName>TopoSearch-MinTimeProblem</AssemblyName>
+    <RootNamespace>TopoSort_DigitOrderProblem</RootNamespace>
+    <AssemblyName>TopoSort-DigitOrderProblem</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

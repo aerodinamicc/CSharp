@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OfficeSpace
+namespace TopoSort
 {
     public class Program
     {
@@ -32,6 +32,7 @@ namespace OfficeSpace
                 dict.Add(i, new List<int>());
                 dict[i].AddRange(parents);
             }
+
             optimalTimes = new int[tasks];
             for (int i = 0; i < optimalTimes.Length; i++)
             {

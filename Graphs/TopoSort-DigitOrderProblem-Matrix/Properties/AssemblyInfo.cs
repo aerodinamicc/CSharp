@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TopoSearch-MinTimeProblem")]
+[assembly: AssemblyTitle("TopoSort-DigitOrderProblem-Matrix")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("TopoSearch-MinTimeProblem")]
+[assembly: AssemblyProduct("TopoSort-DigitOrderProblem-Matrix")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cc36f5cc-3594-4990-96a0-0b72e4457db7")]
+[assembly: Guid("36cb549a-b7a1-40e9-a121-1f62a1ad5342")]
 
 // Version information for an assembly consists of the following four values:
 //
