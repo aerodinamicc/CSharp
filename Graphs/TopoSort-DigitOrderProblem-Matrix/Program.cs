@@ -29,13 +29,12 @@ namespace TopoSort_DigitOrderProblem_Matrix
         {
             int lines = int.Parse(Console.ReadLine());
             ReadInData(lines);
-            PrintMatrix();
+            //PrintMatrix();
             while (digits.Count != 0)
             {
                 TopoSort(digits.Min());
             }
             Console.WriteLine(string.Join("", result));
-            Console.ReadKey();
         }
 
         public static void ReadInData(int lines)
