@@ -23,7 +23,7 @@ namespace WpfWindowsBrowser
 
             var image = "/Images/file.jpg";
 
-            var name = MainWindow.GetFolderName(path);
+            var name = DirectoryStructure.GetFolderName(path);
 
             if (string.IsNullOrEmpty(name))
             {
