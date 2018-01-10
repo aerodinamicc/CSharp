@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace LettersOnTheTrack
 {
@@ -88,7 +83,7 @@ namespace LettersOnTheTrack
             }
             set
             {
-                if (value > 140 || value < 0)
+                if (value > 130 || value < 0)
                 {
                     MessageBox.Show("Index is out of boundaries.");
                     return;

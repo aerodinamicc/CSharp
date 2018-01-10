@@ -1,7 +1,4 @@
-﻿using PropertyChanged;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -11,13 +8,12 @@ using System.Windows.Input;
 
 namespace LettersOnTheTrack
 {
-    [AddINotifyPropertyChangedInterface]
 
     public class TrackViewModel : INotifyPropertyChanged
     {
         private string letter = "";
         private int speed;
-        private StringBuilder track = new StringBuilder(new string(' ', 140));
+        private StringBuilder track = new StringBuilder(new string(' ', 130));
 
         public ObservableCollection<LetterObject> Letters = new ObservableCollection<LetterObject>();
 
