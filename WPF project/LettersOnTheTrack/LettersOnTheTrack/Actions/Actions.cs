@@ -2,12 +2,13 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LettersOnTheTrack
 {
     public static class Actions
     {
-        public static void ChangeOfSpeed(ObservableCollection<MovingLetter> Letters, char letter, int speed)
+        public static void ChangeOfSpeed(ObservableCollection<LetterObject> Letters, char letter, int speed)
         {
             var existingLetter = Letters.FirstOrDefault(l => l.Letter == letter);
 
@@ -17,40 +18,24 @@ namespace LettersOnTheTrack
             }
             else
             {
-                Letters.Remove(existingLetter);
                 existingLetter.Speed = speed;
-                Letters.Add(existingLetter);
             }
         }
 
-        public static void AddingANewLetter(ObservableCollection<MovingLetter> Letters, char letter, int speed)
+        public static void RemoveALetterFromCollection(ObservableCollection<LetterObject> Letters, char letter)
         {
-            Letters.Add(new MovingLetter()
-            {
-                Letter = letter,
-                Speed = speed,
-            });
-        }
-
-        public static void RemoveALetterFromCollection(ObservableCollection<MovingLetter> Letters, char letter)
-        {
-            MovingLetter letterToRemove = Letters.FirstOrDefault(l => l.Letter == letter);
-
+            //ei tuk mirishe
+            var letterToRemove = Letters.First(x => (char)x.Letter == letter);
+            
             if (letterToRemove != null)
             {
                 Letters.Remove(letterToRemove);
             }
         }
 
-        public static void RemoveAFromTrack(char letter, StringBuilder track)
+        public static void RemoveAFromTrack(ObservableCollection<LetterObject> Letters, char letter, StringBuilder track)
         {
-            var line = track.ToString();
-            var position = line.IndexOf(letter);
-
-            if (position != -1)
-            {
-                track[position] = ' ';
-            }
+            track.Replace(letter, ' ');
         }
     }
 }

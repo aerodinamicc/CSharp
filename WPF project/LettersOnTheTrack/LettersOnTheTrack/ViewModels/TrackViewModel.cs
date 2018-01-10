@@ -17,9 +17,9 @@ namespace LettersOnTheTrack
     {
         private string letter = "";
         private int speed;
-        private StringBuilder track = new StringBuilder(new string(' ', 60));
+        private StringBuilder track = new StringBuilder(new string(' ', 140));
 
-        public ObservableCollection<MovingLetter> Letters = new ObservableCollection<MovingLetter>();
+        public ObservableCollection<LetterObject> Letters = new ObservableCollection<LetterObject>();
 
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
 
@@ -31,6 +31,8 @@ namespace LettersOnTheTrack
 
         private void GoButton()
         {
+            #region Validation
+            //Validation
             if (string.IsNullOrEmpty(this.Letter))
             {
                 return;
@@ -47,6 +49,8 @@ namespace LettersOnTheTrack
                 MessageBox.Show("Only letters are allowed to hit the track.");
                 return;
             }
+            #endregion
+            #region Change of speed or creating a new letter
             else
             {
                 char letter = char.Parse(this.Letter);
@@ -60,19 +64,40 @@ namespace LettersOnTheTrack
                 }
                 else
                 {
-                    Actions.AddingANewLetter(Letters, letter, this.Speed);
+                    var newLetter = new LetterObject()
+                    {
+                        Letter = letter,
+                        Speed = speed,
+                    };
+
+                    Letters.Add(newLetter);
 
                     this.Letter = "";
                     this.Speed = 0;
 
-                    track.Append(letter);
-                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Track)));
+                    Task.Run(async () =>
+                    {
+                        while (Letters.Contains(newLetter))
+                        {
+                            if (newLetter.Speed > 0)
+                            {
+                                await Task.Delay(newLetter.Speed * 50);
+                                if (Letters.Contains(newLetter))
+                                {
+                                    LetterMoves(track, newLetter);
+                                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(Track)));
+                                }
+                            }
+                        }
+                    });
                 }
             }
+            #endregion
         }
 
         private void StopButton()
         {
+            #region Validation
             if (string.IsNullOrEmpty(this.Letter))
             {
                 return;
@@ -89,17 +114,23 @@ namespace LettersOnTheTrack
                 MessageBox.Show("Only letters are allowed to hit the track.");
                 return;
             }
+            #endregion
+            #region Remove a letter from track and from the collection
             else
             {
                 char letter = char.Parse(this.Letter);
 
-                if(Letters.Any(l => l.Letter == letter))
+                if (Letters.Any(l => (char)l.Letter == letter))
                 {
                     Actions.RemoveALetterFromCollection(Letters, letter);
-                    Actions.RemoveAFromTrack(letter, track);
+                    track.Replace(letter, ' ');
                     PropertyChanged(this, new PropertyChangedEventArgs(nameof(Track)));
                 }
+
+                this.Letter = "";
+                this.Speed = 0;
             }
+            #endregion
         }
 
         public ICommand GoButtonCommand { get; set; }
@@ -143,6 +174,11 @@ namespace LettersOnTheTrack
                 this.track = value;
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(Track)));
             }
+        }
+
+        private void LetterMoves(StringBuilder track, LetterObject letter)
+        {
+            MovementOfLetters.MakeAStep(letter, track);
         }
     }
 }
