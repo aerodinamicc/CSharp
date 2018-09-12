@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreChore.Console", "StoreChoreAirtable.Web\StoreChore.Console.csproj", "{42A3C318-8734-464B-A0F1-0B1C3FEA4442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airtable.Web", "Airtable.Web\Airtable.Web.csproj", "{133E537D-5CC6-4320-9753-6A2A97B1F29B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SC.Android", "SC\SC.Android\SC.Android.csproj", "{BDE07D21-92C7-4091-BA9A-7D4334EF8834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SC", "SC\SC\SC.csproj", "{625D2644-4D1F-4FF9-B81A-F0666A20382E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42A3C318-8734-464B-A0F1-0B1C3FEA4442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A3C318-8734-464B-A0F1-0B1C3FEA4442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A3C318-8734-464B-A0F1-0B1C3FEA4442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A3C318-8734-464B-A0F1-0B1C3FEA4442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133E537D-5CC6-4320-9753-6A2A97B1F29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133E537D-5CC6-4320-9753-6A2A97B1F29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133E537D-5CC6-4320-9753-6A2A97B1F29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133E537D-5CC6-4320-9753-6A2A97B1F29B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE07D21-92C7-4091-BA9A-7D4334EF8834}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{625D2644-4D1F-4FF9-B81A-F0666A20382E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625D2644-4D1F-4FF9-B81A-F0666A20382E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625D2644-4D1F-4FF9-B81A-F0666A20382E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625D2644-4D1F-4FF9-B81A-F0666A20382E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {335D099D-25FB-406D-84B6-FE3060DFA011}
+	EndGlobalSection
+EndGlobal
