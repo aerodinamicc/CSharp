@@ -9,12 +9,14 @@ using Xamarin.Forms.Xaml;
 
 namespace SC
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CreateRecordContentPage : ContentPage
-	{
-		public CreateRecordContentPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CreateRecordContentPage : ContentPage
+    {
+        public CreateRecordContentPage()
+        {
+            InitializeComponent();
+
+            
+        }
+    }
 }

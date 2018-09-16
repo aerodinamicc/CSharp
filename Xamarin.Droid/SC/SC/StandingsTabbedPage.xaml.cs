@@ -15,6 +15,8 @@ namespace SC
         public StandingsTabbedPage ()
         {
             InitializeComponent();
+
+
         }
     }
 }

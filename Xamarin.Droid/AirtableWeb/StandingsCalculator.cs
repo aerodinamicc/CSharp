@@ -1,11 +1,9 @@
-﻿using Airtable.Web.Models;
-using Newtonsoft.Json;
+﻿using AirtableWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Airtable.Web
+namespace AirtableWeb
 {
     public static class StandingsCalculator
     {
@@ -20,11 +18,24 @@ namespace Airtable.Web
             { "Zlatko", new List<KeyValuePair<string, double>>() }
         };
 
-        private static Dictionary<string, double> resultsOverall = new Dictionary<string, double>
+        private static void GetChoreWeights()
         {
-            { "Daniusha", 0 },
-            { "Zlatko", 0 }
-        };
+            var choresList = AirtableHandler.GetChores().GetAwaiter().GetResult().records;
+
+            foreach (var chore in choresList)
+            {
+                weights.Add(chore.fields.Name, chore.fields.Weight);
+
+                //we need a map because the reference in Airtable keep the unique identifier and not directly the value of Chore
+                ChoresMap.Add(chore.id, chore.fields.Name);
+
+                //initiating the Chores in resultByCategory
+                foreach (var participant in ResultsByCategory.Keys)
+                {
+                    ResultsByCategory[participant].Add(new KeyValuePair<string, double>(chore.fields.Name, 0));
+                }
+            }
+        }
 
         public static Dictionary<string, List<KeyValuePair<string, double>>> ResultsByCategory
         {
@@ -32,11 +43,15 @@ namespace Airtable.Web
             {
                 return resultsByCategory;
             }
+
             private set { }
         }
 
-        public static void CalculateResults(List<RecordTableRecord> recordsList, bool dailyResult = false)
+        public static void CalculateResults(bool dailyResult = false)
         {
+            var recordsList = AirtableHandler.GetRecords().GetAwaiter().GetResult().records;
+            GetChoreWeights();
+
             foreach (var participant in ResultsByCategory.Keys)
             {
                 //get all records of a participant
@@ -51,38 +66,20 @@ namespace Airtable.Web
                 //sum all records by category
                 foreach (var record in participantRecords)
                 {
-                    var choreIdentifier = record.fields.Chore[0]; 
+                    var choreIdentifier = record.fields.Chore[0];
                     var choreName = ChoresMap[choreIdentifier];
                     var choreWeight = weights[choreName];
                     var points = record.fields.Points;
                     var result = points * choreWeight;
 
                     ResultsByCategory[participant].Where(x => x.Key == choreName).Select(x => new KeyValuePair<string, double>(x.Key, x.Value + result));
-                    resultsOverall[participant] += result;
 
                     if (!ResultsByCategory.ContainsKey("Overall"))
                     {
-                        ResultsByCategory.Add(participant, new List<KeyValuePair< string, double>>());
+                        ResultsByCategory.Add(participant, new List<KeyValuePair<string, double>>());
                         ResultsByCategory[participant].Add(new KeyValuePair<string, double>("Overall", 1));
                     }
                     ResultsByCategory[participant].Where(x => x.Key == "Overall").Select(x => new KeyValuePair<string, double>(x.Key, x.Value + result));
-                }
-            }
-        }
-
-        public static void GetChoreWeights(List<ChoreRecord> choresList)
-        {
-            foreach (var chore in choresList)
-            {
-                weights.Add(chore.fields.Name, chore.fields.Weight);
-
-                //we need a map because the reference in Airtable keep the unique identifier and not directly the value of Chore
-                ChoresMap.Add(chore.id, chore.fields.Name);
-
-                //initiating the Chores in resultByCategory
-                foreach (var participant in ResultsByCategory.Keys)
-                {
-                    ResultsByCategory[participant].Add(new KeyValuePair<string, double>(chore.fields.Name, 0));
                 }
             }
         }

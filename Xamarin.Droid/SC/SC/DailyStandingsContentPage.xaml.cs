@@ -15,6 +15,7 @@ namespace SC
 		public DailyStandingsContentPage ()
 		{
 			InitializeComponent ();
+
 		}
 	}
 }
