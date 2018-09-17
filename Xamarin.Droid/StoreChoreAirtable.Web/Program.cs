@@ -1,5 +1,5 @@
-﻿using Airtable.Web;
-using Airtable.Web.Models;
+﻿using AirtableWeb;
+using AirtableWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

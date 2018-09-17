@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SC.Android", "SC\SC.Android
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC", "SC\SC\SC.csproj", "{625D2644-4D1F-4FF9-B81A-F0666A20382E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirtableWeb", "AirtableWeb\AirtableWeb.csproj", "{4D6947C0-9F97-40F9-97EE-6A230F33103F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirtableWeb", "AirtableWeb\AirtableWeb.csproj", "{4D6947C0-9F97-40F9-97EE-6A230F33103F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{7008A047-B57A-47DD-83BC-2B22DE27AEB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{4D6947C0-9F97-40F9-97EE-6A230F33103F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D6947C0-9F97-40F9-97EE-6A230F33103F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D6947C0-9F97-40F9-97EE-6A230F33103F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7008A047-B57A-47DD-83BC-2B22DE27AEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7008A047-B57A-47DD-83BC-2B22DE27AEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7008A047-B57A-47DD-83BC-2B22DE27AEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7008A047-B57A-47DD-83BC-2B22DE27AEB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

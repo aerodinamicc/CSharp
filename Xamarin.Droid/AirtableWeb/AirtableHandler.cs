@@ -1,5 +1,6 @@
 ﻿using AirtableWeb.Models;
 using Newtonsoft.Json;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -46,14 +47,30 @@ namespace AirtableWeb
             return null;
         }
 
-        public async static void SendRecord(RecordFields recordFields)
+        public static void SendRecord(RecordFields recordFields)
         {
             using (var client = new HttpClient())
             {
                 var stringJson = "{ \"fields\":" + JsonConvert.SerializeObject(recordFields) + "}";
                 var content = new StringContent(stringJson, Encoding.UTF8, "application/json");
                 var url = airtableUrl + recordsTables + TOKEN;
-                var response = await client.PostAsync(url, content).ConfigureAwait(false);
+
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    streamWriter.Write(stringJson);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                if (httpResponse.StatusCode == HttpStatusCode.OK)
+                {
+                    System.Console.WriteLine("Record sent.");
+                }
             }
         }
     }

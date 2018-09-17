@@ -47,9 +47,29 @@ namespace AirtableWeb
             private set { }
         }
 
+        public static List<string> Chores
+        {
+            get
+            {
+                return ChoresMap.Values.ToList();
+            }
+
+            private set { }
+        }
+
+        public static List<string> Participants
+        {
+            get
+            {
+                return resultsByCategory.Keys.ToList();
+            }
+            private set { }
+        }
+
         public static void CalculateResults(bool dailyResult = false)
         {
-            var recordsList = AirtableHandler.GetRecords().GetAwaiter().GetResult().records;
+            var records = AirtableHandler.GetRecords();
+            var recordsList = records.Result.records;
             GetChoreWeights();
 
             foreach (var participant in ResultsByCategory.Keys)
@@ -76,7 +96,7 @@ namespace AirtableWeb
 
                     if (!ResultsByCategory.ContainsKey("Overall"))
                     {
-                        ResultsByCategory.Add(participant, new List<KeyValuePair<string, double>>());
+                        //ResultsByCategory.Add(participant, new List<KeyValuePair<string, double>>("Overall", 1));
                         ResultsByCategory[participant].Add(new KeyValuePair<string, double>("Overall", 1));
                     }
                     ResultsByCategory[participant].Where(x => x.Key == "Overall").Select(x => new KeyValuePair<string, double>(x.Key, x.Value + result));
