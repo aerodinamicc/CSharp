@@ -51,6 +51,7 @@ namespace SC
             }
 
             Content = grid;
+            Title = "Daily";
         }
 	}
 }

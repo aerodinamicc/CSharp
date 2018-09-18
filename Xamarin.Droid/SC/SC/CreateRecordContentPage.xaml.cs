@@ -45,14 +45,14 @@ namespace SC
             };
             intensityPicker.ItemsSource = intensity;
 
-            Button button = new Button
+            Button sendButton = new Button
             {
                 Text = "Click to Rotate Text!",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.Center
             };
 
-            button.Clicked += (sender, args) => AirtableHandler.SendRecord(new AirtableWeb.Models.RecordFields
+            sendButton.Clicked += (sender, args) => AirtableHandler.SendRecord(new AirtableWeb.Models.RecordFields
             {
                 Chore = new List<string>
                 {
@@ -62,6 +62,17 @@ namespace SC
                 Points = EstimatePoints(intensityPicker.Items[intensityPicker.SelectedIndex])
             }
             );
+
+
+            var stack = new StackLayout();
+
+            stack.Children.Add(participantPicker);
+            stack.Children.Add(chorePicker);
+            stack.Children.Add(intensityPicker);
+            stack.Children.Add(sendButton);
+
+            Content = stack;
+            Title = "New chore";
         }
 
         public double EstimatePoints(string intensity)

@@ -52,32 +52,7 @@ namespace SC
             }
 
             Content = grid;
-            //{
-            //    RowSpacing = 0,
-            //    RowDefinitions = { new RowDefinition { Height = GridLength.Auto }, new RowDefinition { } },
-            //    Children = {
-                    
-                    
-            //        //PageHeader.Create(PageMarginSize, nameof(vm.RegistrationTitle), returnToPreviousViewCommandPropertyName: nameof(vm.CancelEnterRegistrationCodeCommand), centerTitle:true),
-
-            //        new ScrollView { Content = new Grid {
-            //            RowDefinitions = {
-
-            //                new RowDefinition { Height = 170,  },
-
-            //                new RowDefinition { Height = 75 },
-            //                new RowDefinition { Height = GridLength.Auto },
-            //                new RowDefinition { Height = GridLength.Auto }
-            //            },
-            //            RowSpacing = 0,
-
-            //            ColumnDefinitions = {
-            //                new ColumnDefinition { Width = 160 },
-            //                new ColumnDefinition { }
-            //            }
-            //        }}
-            //    }
-            //};
+            Title = "All time";
         }
 	}
 }

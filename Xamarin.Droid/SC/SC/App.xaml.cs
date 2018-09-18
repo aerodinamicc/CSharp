@@ -19,7 +19,7 @@ namespace SC
         {
             InitializeComponent();
             
-            MainPage = new StandingsTabbedPage();
+            MainPage = new OverallStandingsContentPage();
         }
 
         protected override void OnStart()
