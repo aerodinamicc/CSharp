@@ -14,6 +14,7 @@ namespace TestConsoleApp
         {
             Console.WriteLine("Hello World!");
             StandingsCalculator.CalculateResults();
+            var resultsByCategory = StandingsCalculator.ResultsByCategory;
             AirtableHandler.SendRecord(new RecordFields
             {
                 Chore = new List<string>()

@@ -83,6 +83,8 @@ namespace AirtableWeb
                     participantRecords = participantRecords.Where(r => r.createdTime.Date == today).ToList();
                 }
 
+                int overallIndex = 0;
+
                 //sum all records by category
                 foreach (var record in participantRecords)
                 {
@@ -92,14 +94,17 @@ namespace AirtableWeb
                     var points = record.fields.Points;
                     var result = points * choreWeight;
 
-                    ResultsByCategory[participant].Where(x => x.Key == choreName).Select(x => new KeyValuePair<string, double>(x.Key, x.Value + result));
+                    var choreIndex = ResultsByCategory[participant].FindIndex(x => x.Key == choreName);
+                    var choreToUpdate = ResultsByCategory[participant][choreIndex];
+                    ResultsByCategory[participant][choreIndex]= new KeyValuePair<string, double>(choreToUpdate.Key, choreToUpdate.Value + result);
 
-                    if (!ResultsByCategory.ContainsKey("Overall"))
+                    if (!ResultsByCategory[participant].Any(x => x.Key == "Overall"))
                     {
-                        //ResultsByCategory.Add(participant, new List<KeyValuePair<string, double>>("Overall", 1));
-                        ResultsByCategory[participant].Add(new KeyValuePair<string, double>("Overall", 1));
+                        ResultsByCategory[participant].Add(new KeyValuePair<string, double>("Overall", 0));
+                        overallIndex = ResultsByCategory[participant].FindIndex(x => x.Key == "Overall");
                     }
-                    ResultsByCategory[participant].Where(x => x.Key == "Overall").Select(x => new KeyValuePair<string, double>(x.Key, x.Value + result));
+                    ResultsByCategory[participant][overallIndex] = new KeyValuePair<string, double>(ResultsByCategory[participant][overallIndex].Key,
+                                                                                                    ResultsByCategory[participant][overallIndex].Value + result);
                 }
             }
         }
