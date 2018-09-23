@@ -36,7 +36,6 @@ namespace TestConsoleApp
             });
 
             Console.ReadKey();
-			
         }
     }
 }
