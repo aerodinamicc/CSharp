@@ -34,15 +34,6 @@ namespace TestConsoleApp
                 Participant = "Daniusha",
                 Points = 1
             });
-			AirtableHandler.SendRecord(new RecordFields
-            {
-                Chore = new List<string>()
-                {
-                    { StandingsCalculator.GetChoreIdentifierByName("Laundry") }
-                },
-                Participant = "Daniusha",
-                Points = 1
-            });
 
             Console.ReadKey();
         }
